@@ -9,7 +9,7 @@ Yes
  */
 import java.util.Scanner;
 
-public class class_work2_chocolate {
+public class CW_3_chocolate {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Write a chocolate size: ");

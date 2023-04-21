@@ -4,7 +4,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class task2 {
+public class CW_2 {
     public static void main(String[] args) {
         int [] randomArray = generateArray(20, 0, 1 );
         System.out.println(count_ones(randomArray));

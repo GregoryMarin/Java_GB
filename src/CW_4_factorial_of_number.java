@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CW_3_factorial_of_number {
+public class CW_4_factorial_of_number {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Write a number: ");
