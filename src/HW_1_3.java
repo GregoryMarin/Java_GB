@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-public class HW_3 {
+public class HW_1_3 {
     public static void main(String[] args) {
         /*
         Заполнить список названиями планет Солнечной системы в произвольном порядке с повторениями.

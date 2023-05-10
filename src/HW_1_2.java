@@ -2,9 +2,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
-public class HW_2 {
+public class HW_1_2 {
     public static void main(String[] args) {
         /*
         Задан целочисленный список ArrayList.
