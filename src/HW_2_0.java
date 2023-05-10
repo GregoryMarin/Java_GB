@@ -1,22 +1,32 @@
-import java.util.*;
+
+
+import java.util.LinkedList;
+import java.util.Random;
+
+/*Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернет “перевернутый” список.
+Постараться не обращаться к листу по индексам*/
 public class HW_2_0 {
     public static void main(String[] args) {
-        /*
-        Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернет “перевернутый” список.
-        Постараться не обращаться к листу по индексам.
-         */
-        first_task();
-    }
 
-    static void first_task(){
-        Scanner scanner = new Scanner(System.in);
-        LinkedList<String> list = new LinkedList<>();
-        for (int i = 0; i < 1; i++) {
-            list.add(scanner.nextLine());
+        LinkedList<Integer> lst =  creatList(10,0,10);
+        System.out.println(lst);
+        lst = revers_LinkedList(lst);
+        System.out.println(lst);
+    }
+    static LinkedList<Integer> revers_LinkedList(LinkedList<Integer> lst){
+        LinkedList<Integer> lst2 = new LinkedList<>();
+        while (!lst.isEmpty()){
+            lst2.addFirst(lst.pop());
+
         }
-        ListIterator<String> iterator = list.listIterator(list.size());
-        while (iterator.hasPrevious()){
-            System.out.println(iterator.hasPrevious());
+        return lst2;
+    }
+    public static LinkedList<Integer> creatList(int capacity, int min, int max){
+        LinkedList<Integer> lst = new LinkedList<>();
+        Random rnd = new Random();
+        for (int i = 0; i < capacity; i++) {
+            lst.add(rnd.nextInt(min, max));
         }
+        return lst;
     }
 }
