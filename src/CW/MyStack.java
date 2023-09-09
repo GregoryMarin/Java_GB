@@ -1,3 +1,5 @@
+package CW;
+
 public class MyStack {
     /*
     Реализовать стек с помощью массива.

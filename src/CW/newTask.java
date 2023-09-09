@@ -1,3 +1,7 @@
+package CW;
+
+import CW.MyStack;
+
 public class newTask {
     public static void main(String[] args) {
         ex1();

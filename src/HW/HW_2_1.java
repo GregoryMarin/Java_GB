@@ -1,3 +1,5 @@
+package HW;
+
 import java.util.LinkedList;
 
 /*Реализуйте очередь с помощью LinkedList со следующими методами:

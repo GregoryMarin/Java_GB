@@ -1,3 +1,5 @@
+package CW;
+
 import java.util.Scanner;
 
 public class CW_1 {
