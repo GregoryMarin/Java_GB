@@ -1,15 +1,42 @@
+package HW;
+
 import java.util.*;
+import java.util.stream.Collectors;
 
-public class My_methods {
-    public static void main(String[] args) {
-    }
-
-    static LinkedList<Integer> createListInt(int capacity, int min, int max){
+public class HW_Methods {
+    static LinkedList<Integer> createLinkedListInt(int capacity, int min, int max){
         LinkedList<Integer> result = new LinkedList<>();
         for (int i = 0; i < capacity; i++) {
             result.add((int)(Math.random() * (max - min + 1) + min));
         }
         return result;
+    }
+
+    static List<Integer> crRndArrListInt (int size, int min, int max) {
+        List<Integer> lstArr = new ArrayList<>();
+        Random rnd = new Random();
+        for (int i = 0; i < size; i++) {
+            lstArr.add(rnd.nextInt(min, max));
+        }
+        return lstArr;
+    }
+
+    static double findAverage(List<Integer> lst){
+        double counter = 0;
+        for (int i = 0; i < lst.size(); i++) {
+            counter += lst.get(i);
+        }
+
+        return counter / lst.size();
+    }
+
+    static void removeEvenNum(List<Integer> ls){
+        for (int i = 0; i < ls.size(); i++) {
+            if (ls.get(i) % 2 == 0){
+                ls.remove(i);
+                i--;
+            }
+        }
     }
 
     static void removeInteger(List list){
@@ -44,6 +71,15 @@ public class My_methods {
         }
         return counter;
     }
+
+    static List<Object> planetFinder(List<String> lst){
+        List<Object> l2 = new ArrayList<>();
+        for (int i = 0; i < lst.size(); i++){
+            l2.add(lst.get(i) + " = " + Collections.frequency(lst, lst.get(i)));
+        }
+        return l2.stream().distinct().collect(Collectors.toList());
+    }
+
 
     static List<Integer> deleteNumbers(List<Integer> lm ){
         for (int i = 0; i < lm.size(); i++) {
@@ -111,4 +147,3 @@ public class My_methods {
         return lst.getFirst();
     }
 }
-

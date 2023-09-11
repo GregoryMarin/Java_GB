@@ -2,7 +2,6 @@ import java.util.*;
 
 public class All_tasks {
     public static void main(String[] args) {
-        ex_9();
     }
 
 //    static void ex2(){
@@ -208,11 +207,31 @@ public class All_tasks {
 //        }
 //    }
 
-    static void ex_9(){
-        /*
+//    static void ex_9(){
+//        /*
+//        Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернет "Перевернутый" список.
+//        Постараться не обращаться к листу по индексам.
+//         */
+//        LinkedList<Integer> list = My_methods.createListInt(10, 1, 50);
+//        System.out.println(list);
+//        LinkedList<Integer> list2 = My_methods.reverselst(list);
+//        System.out.println(list2);
+//    }
 
-         */
+//    static void ex_10(){
+//        /*
+//        Реализуйте очередь с помощью LinkedList со следующими методами:
+//        enqueue - помещает элемент в конец очереди, dequeue - возвращает первый элемент из очереди и удаляет его,
+//        first - возвращает первый элемент из очереди, не удаляя.
+//         */
+//        LinkedList<Integer> lst = My_methods.createListInt(15, 1, 100);
+//        My_methods.enqueue(lst, 78);
+//        System.out.println(lst);
+//        System.out.println(My_methods.dequeue(lst));
+//        System.out.println(lst);
+//        System.out.println(My_methods.first(lst));
+//    }
 
-    }
+    
 }
 
