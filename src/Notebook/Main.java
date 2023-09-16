@@ -3,44 +3,82 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        noteBook();
+        Set<Laptop> laptops = new HashSet<>();
+
+        laptops.add(new Laptop("HP", 8, 1000, "Windows 10", "Green"));
+        laptops.add(new Laptop("Apple", 8, 512, "MacOS", "Silver"));
+        laptops.add(new Laptop("Lenovo", 8, 2000, "Windows 10", "Grey"));
+        laptops.add(new Laptop("Dell", 8, 500, "Linux", "Black"));
+        laptops.add(new Laptop("Asus", 16, 100, "Windows 10", "Red"));
+
+        filterLaptops(laptops);
     }
 
-    static void noteBook(){
-        /*
-        Подумать над структурой класса Ноутбук для магазина техники - выделить поля и методы. Реализовать в Java
-        Создать множество ноутбуков.
-        Написать метод, который будет запрашивать у пользователя критерий (или критерии) фильтрации и выведет
-        ноутбуки, отвечающие фильтру. Критерии фильтрации можно хранить в Map. Например:
-        "Введите цифру соответствующую необходиимому критерию:
-        1 - ОЗУ
-        2 - обьем ЖД
-        3 - операционная система
-        4 - цвет..."
-        Далее нужно запросить минимальные значения для указанных критериев - сохранить параметры фильтрации
-        можно так же в Map. Отфильтровать ноутбуки из первоночального списка множества и вывести прозодящие
-        по условиям
-         */
-        Scanner sc = new Scanner(System.in);
+    static void filterLaptops(Set<Laptop> laptops){
+        Map<String, String> criteria = new HashMap<>();
+        criteria.put("1", "ОЗУ");
+        criteria.put("2", "Объем ЖД");
+        criteria.put("3", "Операционная система");
+        criteria.put("4", "Цвет");
 
-        Notebook nb1 = new Notebook("Samsung", 6, 120, "Linux", "silver");
-        Notebook nb2 = new Notebook("Lenovo", 4, 100, "Microsoft", "white");
-        Notebook nb3 = new Notebook("NotePad",8, 240, "Microsoft", "brown");
-        Notebook nb4 = new Notebook("MacBookPro1",16, 500, "IOS", "grey");
-        Notebook nb5 = new Notebook("MacBookPro2",8, 500, "IOS", "grey");
-        Notebook nb6 = new Notebook("Sony",4, 120, "Linux", "white");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите цифру соответствующую необходимому критерию: ");
+        System.out.println("1, ОЗУ");
+        System.out.println("2, Объем ЖД");
+        System.out.println("3, Операционная система");
+        System.out.println("4, Цвет");
 
-        Set<Notebook> nb = new HashSet<>();
-        nb.add(nb1);
-        nb.add(nb2);
-        nb.add(nb3);
-        nb.add(nb4);
-        nb.add(nb5);
-        nb.add(nb6);
+        String userInput = scanner.nextLine();
 
-        System.out.println("Write parameters of notebook you need: \n 1) OZU \n 2) hd_capacity \n");
-        int ozu = sc.nextInt();
-        int capacity = sc.nextInt();
-        System.out.println(Notebook.getByOZU_capacity(ozu, capacity));
+        if (criteria.containsKey(userInput)){
+            String selectCriteria = criteria.get(userInput);
+            System.out.println("Введите минимально значение для " + selectCriteria + ":");
+            String minValue = scanner.nextLine();
+
+            Set<Laptop> filteredLaptops = new HashSet<>();
+            switch (selectCriteria) {
+                case "ОЗУ":
+                    int minRam = Integer.parseInt(minValue);
+                    for (Laptop laptop : laptops) {
+                        filteredLaptops.add(laptop);
+                    }
+                    break;
+                case "Объем ЖД" :
+                    int minHddSize = Integer.parseInt(minValue);
+                    for (Laptop laptop: laptops){
+                        if (laptop.getHddSize() >= minHddSize){
+                            filteredLaptops.add(laptop);
+                        }
+                    }
+                    break;
+                case "Операционная сиистема" :
+                    for (Laptop laptop: laptops){
+                        if (laptop.getOs().equalsIgnoreCase(minValue)){
+                            filteredLaptops.add(laptop);
+                        }
+                    }
+                    break;
+                case "Цвет" :
+                    for (Laptop laptop: laptops){
+                        if (laptop.getColor().equalsIgnoreCase(minValue)){
+                            filteredLaptops.add(laptop);
+                        }
+                    }
+                    break;
+                default:
+                    System.out.println("Некорректный ввод критерия!");
+                    return;
+            }
+            if (filteredLaptops.isEmpty()){
+                System.out.println("Ноутбуки, удовлетворяющие условиям фильтрации, не найдены.");
+            }else {
+                for (Laptop laptop: filteredLaptops){
+                    System.out.println(laptop);
+                }
+            }
+        }
+        else {
+            System.out.println("Некорректный ввод");
+        }
     }
 }
