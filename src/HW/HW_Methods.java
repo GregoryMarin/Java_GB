@@ -80,7 +80,6 @@ public class HW_Methods {
         return l2.stream().distinct().collect(Collectors.toList());
     }
 
-
     static List<Integer> deleteNumbers(List<Integer> lm ){
         for (int i = 0; i < lm.size(); i++) {
             if (lm.get(i) % 2 == 0){

@@ -214,7 +214,7 @@ public class All_tasks {
 //         */
 //        LinkedList<Integer> list = My_methods.createListInt(10, 1, 50);
 //        System.out.println(list);
-//        LinkedList<Integer> list2 = My_methods.reverselst(list);
+//        LinkedList<Integer> list2 = My_methods.reverse(list);
 //        System.out.println(list2);
 //    }
 
@@ -232,6 +232,7 @@ public class All_tasks {
 //        System.out.println(My_methods.first(lst));
 //    }
 
-    
+
+
 }
 
