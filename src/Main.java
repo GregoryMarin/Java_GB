@@ -2,8 +2,42 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        //HomeTask1();
-        HomeTask2();
+        ex3();
+    }
+
+    public static void ex2(){
+        /*
+        Вводятся целые числа a и b. Гарантируется, что a не превосходит b.
+        Выведите все четные числа от a до b (включительно).
+         */
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Write 2 numbers: ");
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        while (num1 < num2){
+            if (num1 % 2 == 0){
+                System.out.println(num1);
+            }
+            num1 ++;
+        }
+
+    }
+
+    static void ex3() {
+        /*
+        Последовательность состоит из натуральных чисел и завершается числом 0. Определите, сколько элементов этой
+        последовательности больше предыдущего элемента. Гарантируется ввод хотя бы двух ненулевых чисел.
+        */
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int r = sc.nextInt();
+        int m = sc.nextInt();
+        int o = sc.nextInt();
+        int count = 0;
+        if (r > x) count ++;
+        if (m > r) count++;
+        if (o > m) count++;
+        System.out.println(count);
     }
 
     public static void HomeTask1() {
