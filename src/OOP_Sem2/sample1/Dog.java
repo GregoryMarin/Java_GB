@@ -1,8 +1,8 @@
-package OOP_Sem2.sample1;
+package ru.geekbrains.lesson2.sample1;
 
 public class Dog extends Animal{
     @Override
     public void voice() {
-        System.out.println("Dog speaks");
+        System.out.println("Собака лает");
     }
 }

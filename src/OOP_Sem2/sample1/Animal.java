@@ -1,13 +1,17 @@
-package OOP_Sem2.sample1;
+package ru.geekbrains.lesson2.sample1;
 
 public abstract class Animal {
+
     private String name;
 
+
     public abstract void voice();
+
     public void jump(){
-        System.out.println("Животное прыгнуло");
+        System.out.println("Животное подпрыгнуло");
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
 
@@ -15,8 +19,10 @@ public abstract class Animal {
         this.name = name;
     }
 
-    public Animal(){
+    public Animal() {
     }
-    public Animal(String name){
+
+    public Animal(String name) {
+        this.name = name;
     }
 }

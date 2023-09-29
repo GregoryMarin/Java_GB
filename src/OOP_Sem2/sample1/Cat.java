@@ -1,6 +1,8 @@
-package OOP_Sem2.sample1;
+package ru.geekbrains.lesson2.sample1;
 
-public class Cat extends Animal{
+public class Cat extends Animal {
+
+    private String color;
 
     public Cat(String name) {
         super(name);
@@ -10,20 +12,17 @@ public class Cat extends Animal{
         this.color = color;
     }
 
-    private String color;
-
     public String getColor() {
         return color;
     }
 
     @Override
     public void voice() {
-        System.out.println("Cat says 'miau'");
+        System.out.println("Кот мяукает");
     }
 
     @Override
     public void jump() {
-        System.out.println("Cat is jumped");
+        System.out.println("Котик подпрыгнул");
     }
-
 }
