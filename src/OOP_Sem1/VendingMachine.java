@@ -1,4 +1,4 @@
-package OOP;
+package OOP_Sem1;
 import java.util.List;
 
 public class VendingMachine {
@@ -19,12 +19,10 @@ public class VendingMachine {
     }
 
     public Chocolate getChocolate(double calories){
-        if (Product product: products){
-            if (products instanceof Chocolate){
-                Chocolate chocolate = (Chocolate) products;
-                if (chocolate.calories == calories){
-                    return chocolate;
-                }
+        if (products instanceof Chocolate){
+            Chocolate chocolate = (Chocolate) products;
+            if (chocolate.calories == calories){
+                return chocolate;
             }
         }
         return null;

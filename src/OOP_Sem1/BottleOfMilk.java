@@ -1,4 +1,4 @@
-package OOP;
+package OOP_Sem1;
 
 public class BottleOfMilk extends Product {
     private int volume;
